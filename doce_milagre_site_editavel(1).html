@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff4f6">
+<title>Doce Milagre | Loja & Precificação</title>
+<style>
+:root{--pink:#f5c8d2;--pink2:#ffe8ed;--rose:#a94d68;--deep:#713448;--cream:#fffaf7;--ink:#49363b;--muted:#8c777d;--line:#f0dce1;--white:#fff;--green:#477b60}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:linear-gradient(120deg,#fff4f6,#fce2e8);border-bottom:1px solid var(--line);padding:18px clamp(16px,4vw,54px);position:sticky;top:0;z-index:5}
+.top{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px}.cherry{font-size:32px;filter:drop-shadow(0 3px 3px #b56a7c33)}.brand strong{display:block;font-family:Georgia,serif;font-size:25px;color:var(--deep);font-weight:600}.brand small{color:var(--rose);letter-spacing:.14em;text-transform:uppercase;font-size:9px}
+nav{display:flex;gap:8px;flex-wrap:wrap}.navbtn,.btn{border:0;border-radius:999px;padding:11px 17px;font-weight:650;cursor:pointer;transition:.2s}.navbtn{background:transparent;color:var(--deep)}.navbtn.active,.btn.primary{background:var(--rose);color:white}.btn.soft{background:var(--pink2);color:var(--deep)}.btn.line{background:white;border:1px solid var(--line);color:var(--deep)}button:hover{transform:translateY(-1px);filter:brightness(.98)}
+main{max-width:1200px;margin:28px auto;padding:0 clamp(14px,3vw,30px) 60px}.hero{border-radius:26px;background:linear-gradient(115deg,#f7d5dd,#fff0f2 70%);padding:clamp(24px,5vw,54px);display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:20px;overflow:hidden}.eyebrow{color:var(--rose);text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:750}.hero h1{font:clamp(34px,5vw,54px)/1.05 Georgia,serif;color:var(--deep);margin:12px 0}.hero p{max-width:540px;line-height:1.65;color:#755b63}.hero-art{text-align:center;font-size:clamp(76px,12vw,132px);filter:drop-shadow(0 12px 12px #8c445533)}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:32px 0 16px}.sectionhead h2{font:30px Georgia,serif;color:var(--deep);margin:0}.muted{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 5px 18px #6d34400a}.photo{height:160px;background:linear-gradient(135deg,#fff0f3,#f7dce3);display:grid;place-items:center;font-size:64px}.productbody{padding:16px}.product h3{margin:0 0 5px;color:var(--deep);font:21px Georgia,serif}.product p{margin:0 0 14px;color:var(--muted);font-size:13px;min-height:34px}.price{font-weight:800;color:var(--rose);font-size:19px}.productfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:12px}
+.panel{background:white;border:1px solid var(--line);border-radius:22px;padding:22px;margin-top:20px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--deep);cursor:pointer}.tab.active{background:var(--pink2);border-color:var(--pink);font-weight:700}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px}.field input,.field select,.field textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fffdfd;color:var(--ink);font:inherit;outline:none}.field input:focus,.field select:focus{border-color:var(--rose);box-shadow:0 0 0 3px #f5c8d255}.field.full{grid-column:1/-1}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.stat{background:#fff6f8;border:1px solid var(--line);padding:15px;border-radius:16px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:22px;color:var(--deep);margin-top:5px}.result{background:#fff3f6;border:1px dashed #d99bad;border-radius:16px;padding:17px;margin-top:16px}.result strong{font-size:25px;color:var(--rose)}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:540px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);font-size:13px}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.empty{text-align:center;padding:28px;color:var(--muted)}.cartrow{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.hidden{display:none!important}.tag{font-size:11px;background:#f9e7ec;color:var(--rose);padding:5px 9px;border-radius:99px}.notice{font-size:12px;line-height:1.55;color:var(--muted);background:#fff8f4;padding:12px;border-radius:12px;margin-top:15px}.footer{text-align:center;color:var(--muted);font-size:12px;padding:28px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-art{display:none}.grid{grid-template-columns:repeat(2,1fr)}.top{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.navbtn{padding:9px 12px;font-size:12px}.product .photo{height:135px}}
+</style>
+</head>
+<body>
+<header><div class="top">
+ <div class="brand"><span class="cherry">🍒</span><div><strong>Doce Milagre</strong><small>feito com carinho</small></div></div>
+ <nav><button class="navbtn active" data-page="store">Loja</button><button class="navbtn" data-page="pricing">Precificação</button><button class="navbtn" data-page="admin">Meus produtos</button><button class="navbtn" data-page="cart">Carrinho <span id="cartCount">0</span></button></nav>
+</div></header>
+<main>
+<section id="storePage">
+ <div class="hero"><div><div class="eyebrow">Um carinho em forma de doce</div><h1>Pequenos doces,<br>grandes momentos.</h1><p>Escolha seus favoritos e monte seu pedido. Será um prazer adoçar o seu dia!</p><button class="btn primary" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">Ver produtos</button></div><div class="hero-art">🍒<br>🍓 🧁</div></div>
+ <div class="sectionhead"><div><div class="eyebrow">Nossa vitrine</div><h2 id="catalog">Feitos para encantar</h2></div><span class="muted" id="productCount"></span></div>
+ <div class="grid" id="storeProducts"></div>
+</section>
+<section id="pricingPage" class="hidden">
+ <div class="sectionhead"><div><div class="eyebrow">Sua cozinha, seus resultados</div><h2>Precificação inteligente</h2><div class="muted">Calcule um preço de venda com base nos custos e na margem desejada.</div></div></div>
+ <div class="panel">
+  <div class="formgrid">
+   <div class="field"><label>Nome do produto</label><input id="calcName" placeholder="Ex.: Cone trufado"></div>
+   <div class="field"><label>Rendimento da receita (unidades)</label><input id="yield" type="number" min="1" value="20"></div>
+   <div class="field"><label>Custo dos ingredientes (R$)</label><input id="ingredients" type="number" min="0" step=".01" value="35"></div>
+   <div class="field"><label>Embalagens (R$)</label><input id="packaging" type="number" min="0" step=".01" value="10"></div>
+   <div class="field"><label>Mão de obra por receita (R$)</label><input id="labor" type="number" min="0" step=".01" value="15"></div>
+   <div class="field"><label>Outros custos por receita (R$)</label><input id="overhead" type="number" min="0" step=".01" value="5"></div>
+   <div class="field"><label>Taxas sobre a venda (%)</label><input id="fees" type="number" min="0" max="99" step=".1" value="0"></div>
+   <div class="field"><label>Margem de lucro desejada (%)</label><input id="margin" type="number" min="0" max="99" step=".1" value="40"></div>
+  </div>
+  <div class="result" id="calcResult">Preço sugerido por unidade: <strong>R$ 5,42</strong><div class="muted" id="calcDetails"></div></div>
+  <div class="actions"><button class="btn primary" id="saveCalc">Salvar produto no catálogo</button><button class="btn line" id="clearCalc">Limpar cálculo</button></div>
+  <div class="notice">O cálculo considera margem sobre o preço de venda: preço = custo unitário ÷ (1 − taxas − margem). Confira se todos os custos foram incluídos. Valores e produtos ficam salvos neste navegador neste protótipo.</div>
+ </div>
+</section>
+<section id="adminPage" class="hidden">
+ <div class="sectionhead"><div><div class="eyebrow">Área administrativa</div><h2>Gerencie sua vitrine</h2><div class="muted">Cadastre, edite ou remova os produtos que aparecem na loja.</div></div><span class="tag">Acesso da proprietária</span></div>
+ <div class="panel">
+  <h3 style="font-family:Georgia;color:var(--deep);margin-top:0">Adicionar produto</h3>
+  <div class="formgrid">
+   <div class="field"><label>Nome</label><input id="newName" placeholder="Nome do doce"></div>
+   <div class="field"><label>Preço de venda (R$)</label><input id="newPrice" type="number" min="0" step=".01" placeholder="0,00"></div>
+   <div class="field"><label>Categoria</label><select id="newCategory"><option>Brigadeiros</option><option>Cones trufados</option><option>Doces especiais</option><option>Salgados</option><option>Outros</option></select></div>
+   <div class="field"><label>Ícone ilustrativo</label><select id="newEmoji"><option>🍫</option><option>🍓</option><option>🍒</option><option>🧁</option><option>🍍</option><option>🥟</option><option>🍬</option></select></div>
+   <div class="field"><label>Sabores disponíveis (editável)</label><input id="newFlavors" placeholder="Ex.: Ninho, chocolate, morango"></div>
+   <div class="field full"><label>Descrição</label><input id="newDesc" placeholder="Conte um pouquinho sobre o produto"></div>
+  </div>
+  <div class="actions"><button class="btn primary" id="addProduct">Adicionar à loja</button></div>
+ </div>
+ <div class="panel"><div class="sectionhead" style="margin-top:0"><h2 style="font-size:24px">Produtos cadastrados</h2><span class="muted" id="adminCount"></span></div><div id="adminProducts"></div></div>
+ <div class="panel"><h3 style="font-family:Georgia;color:var(--deep)">Configurações de pedidos</h3><div class="formgrid"><div class="field"><label>WhatsApp da loja (com DDI e DDD)</label><input id="whatsapp" placeholder="5524999999999"></div><div class="field"><label>Link de pagamento online (opcional)</label><input id="paymentLink" placeholder="Cole aqui seu link de pagamento"></div></div><div class="actions"><button class="btn soft" id="saveSettings">Salvar configurações</button></div><p class="notice">O link de pagamento pode ser de um checkout criado por você em um provedor, como Mercado Pago. Este protótipo não processa cartões nem recebe pagamentos diretamente. Para isso, será necessária a integração segura com um gateway e a publicação do site.</p></div>
+</section>
+<section id="cartPage" class="hidden">
+ <div class="sectionhead"><div><div class="eyebrow">Quase lá!</div><h2>Seu carrinho</h2><div class="muted">Confira os itens antes de enviar seu pedido.</div></div></div>
+ <div class="panel"><div id="cartItems"></div><div class="cartrow"><strong>Total</strong><strong id="cartTotal" style="color:var(--rose);font-size:22px">R$ 0,00</strong></div><div class="formgrid" style="margin-top:18px"><div class="field"><label>Seu nome</label><input id="buyerName" placeholder="Como podemos te chamar?"></div><div class="field"><label>Observações do pedido</label><input id="buyerNote" placeholder="Entrega, retirada, sabores..."></div></div><div class="actions"><button class="btn primary" id="whatsOrder">Enviar pedido pelo WhatsApp</button><button class="btn soft" id="payOrder">Ir para pagamento online</button></div><div class="notice">O pedido será encaminhado para confirmação da loja. A disponibilidade, entrega e prazo devem ser combinados com a Doce Milagre.</div></div>
+</section>
+<div class="footer">🍒 Doce Milagre · Feito com carinho</div>
+</main>
+<script>
+const money=n=>Number(n||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const starter=[
+ {id:1,name:'Brigadeiro tradicional',desc:'Chocolate, carinho e muito sabor.',price:4.5,category:'Brigadeiros',emoji:'🍫',flavors:''},
+ {id:2,name:'Cone trufado de Ninho',desc:'Casquinha crocante com recheio cremoso.',price:9,category:'Cones trufados',emoji:'🧁',flavors:''},
+ {id:3,name:'Cone trufado de abacaxi',desc:'Um toque frutado e delicado.',price:9,category:'Cones trufados',emoji:'🍍',flavors:''}
+];
+let products=JSON.parse(localStorage.getItem('dm_products')||'null')||starter;
+let cart=JSON.parse(localStorage.getItem('dm_cart')||'[]');
+let settings=JSON.parse(localStorage.getItem('dm_settings')||'{}');
+const persist=()=>{localStorage.setItem('dm_products',JSON.stringify(products));localStorage.setItem('dm_cart',JSON.stringify(cart));localStorage.setItem('dm_settings',JSON.stringify(settings));};
+function show(page){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));document.getElementById(page+'Page').classList.remove('hidden');document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));if(page==='cart')renderCart();if(page==='admin')renderAdmin();}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));
+function renderStore(){document.getElementById('storeProducts').innerHTML=products.length?products.map(p=>`<article class="product"><div class="photo">${p.emoji||'🍬'}</div><div class="productbody"><span class="tag">${p.category||'Doces'}</span><h3>${esc(p.name)}</h3><p>${esc(p.desc||'Uma delícia feita com carinho.')}</p>${p.flavors?`<p><b>Sabores:</b> ${esc(p.flavors)}</p>`:'<p class="muted"><i>Sabores em breve</i></p>'}<div class="productfoot"><span class="price">${money(p.price)}</span><button class="btn soft" onclick="addCart(${p.id})">Adicionar +</button></div></div></article>`).join(''):'<div class="empty">Em breve, novidades deliciosas por aqui!</div>';document.getElementById('productCount').textContent=products.length+' opções';}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function addCart(id){let p=products.find(x=>x.id===id);if(!p)return;let line=cart.find(x=>x.id===id);if(line)line.qty++;else cart.push({id:p.id,qty:1});persist();updateCount();alert(p.name+' adicionado ao carrinho!');}
+function updateCount(){document.getElementById('cartCount').textContent=cart.reduce((a,x)=>a+x.qty,0);}
+function renderCart(){let el=document.getElementById('cartItems');if(!cart.length){el.innerHTML='<div class="empty">Seu carrinho está vazio. Volte à loja para escolher seus doces. 🍒</div>';}else{el.innerHTML=cart.map(x=>{let p=products.find(y=>y.id===x.id);if(!p)return '';return `<div class="cartrow"><div><strong>${esc(p.name)}</strong><div class="muted">${money(p.price)} cada</div></div><div style="display:flex;align-items:center;gap:8px"><button class="btn line" onclick="changeQty(${x.id},-1)">−</button><b>${x.qty}</b><button class="btn line" onclick="changeQty(${x.id},1)">+</button></div><strong>${money(p.price*x.qty)}</strong></div>`}).join('');}document.getElementById('cartTotal').textContent=money(total());}
+function total(){return cart.reduce((a,x)=>{let p=products.find(y=>y.id===x.id);return a+(p?p.price*x.qty:0)},0)}
+function changeQty(id,n){let x=cart.find(y=>y.id===id);if(!x)return;x.qty+=n;if(x.qty<=0)cart=cart.filter(y=>y.id!==id);persist();updateCount();renderCart();}
+function renderAdmin(){document.getElementById('adminCount').textContent=products.length+' produtos';document.getElementById('adminProducts').innerHTML=products.length?`<div class="tablewrap"><table><thead><tr><th>Produto</th><th>Categoria</th><th>Sabores (editar)</th><th>Preço</th><th>Ação</th></tr></thead><tbody>${products.map(p=>`<tr><td>${p.emoji||'🍬'} ${esc(p.name)}</td><td>${esc(p.category)}</td><td><input aria-label="Sabores de ${esc(p.name)}" id="flavors-${p.id}" value="${esc(p.flavors||'')}" placeholder="Definir depois" style="min-width:150px;padding:8px;border:1px solid var(--line);border-radius:9px"><button class="btn soft" style="padding:7px 10px;margin-top:5px" onclick="saveFlavors(${p.id})">Salvar sabores</button></td><td>${money(p.price)}</td><td><button class="btn line" onclick="removeProduct(${p.id})">Remover</button></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Nenhum produto cadastrado.</div>';document.getElementById('whatsapp').value=settings.whatsapp||'';document.getElementById('paymentLink').value=settings.paymentLink||'';}
+function saveFlavors(id){let p=products.find(x=>x.id===id);if(!p)return;p.flavors=document.getElementById('flavors-'+id).value.trim();persist();renderStore();alert('Sabores atualizados!');}
+function removeProduct(id){if(!confirm('Remover este produto da loja?'))return;products=products.filter(p=>p.id!==id);cart=cart.filter(x=>x.id!==id);persist();renderStore();renderAdmin();updateCount();}
+document.getElementById('addProduct').onclick=()=>{let name=document.getElementById('newName').value.trim(),price=Number(document.getElementById('newPrice').value);if(!name||!(price>0)){alert('Informe o nome e um preço válido.');return;}products.push({id:Date.now(),name,price,category:document.getElementById('newCategory').value,emoji:document.getElementById('newEmoji').value,desc:document.getElementById('newDesc').value.trim(),flavors:document.getElementById('newFlavors').value.trim()});persist();renderStore();renderAdmin();['newName','newPrice','newDesc','newFlavors'].forEach(id=>document.getElementById(id).value='');alert('Produto adicionado à loja!');};
+document.getElementById('saveSettings').onclick=()=>{settings={whatsapp:document.getElementById('whatsapp').value.replace(/\D/g,''),paymentLink:document.getElementById('paymentLink').value.trim()};persist();alert('Configurações salvas!');};
+const ids=['yield','ingredients','packaging','labor','overhead','fees','margin'];
+function calc(){let v=Object.fromEntries(ids.map(id=>[id,Number(document.getElementById(id).value)||0]));let cost=(v.ingredients+v.packaging+v.labor+v.overhead)/Math.max(1,v.yield);let divisor=1-(v.fees/100)-(v.margin/100);let price=divisor>0?cost/divisor:0;document.getElementById('calcResult').innerHTML=`Preço sugerido por unidade: <strong>${money(price)}</strong><div class="muted" id="calcDetails">Custo unitário: ${money(cost)} · Lucro estimado por unidade: ${money(price-cost-price*v.fees/100)} · Custo da receita: ${money(cost*v.yield)}</div>`;return {price,cost};}
+ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));
+document.getElementById('saveCalc').onclick=()=>{let name=document.getElementById('calcName').value.trim(),r=calc();if(!name||!r.price){alert('Informe o nome e confira os valores da precificação.');return;}products.push({id:Date.now(),name,price:Number(r.price.toFixed(2)),category:'Doces especiais',emoji:'🍒',desc:'Preparado com carinho pela Doce Milagre.',flavors:''});persist();renderStore();alert('Produto salvo no catálogo com o preço calculado!');};
+document.getElementById('clearCalc').onclick=()=>{document.getElementById('calcName').value='';ids.forEach(id=>document.getElementById(id).value=({yield:20,ingredients:0,packaging:0,labor:0,overhead:0,fees:0,margin:40}[id]));calc();};
+function orderText(){let lines=cart.map(x=>{let p=products.find(y=>y.id===x.id);return p?`${x.qty}x ${p.name} — ${money(p.price*x.qty)}`:''}).filter(Boolean);return `Olá! Quero fazer um pedido na Doce Milagre 🍒\n\n${lines.join('\n')}\n\nTotal: ${money(total())}\nNome: ${document.getElementById('buyerName').value||'Não informado'}\nObservações: ${document.getElementById('buyerNote').value||'Nenhuma'}\n\nAguardo confirmação!`;}
+document.getElementById('whatsOrder').onclick=()=>{if(!cart.length){alert('Adicione produtos ao carrinho primeiro.');return;}if(!settings.whatsapp){alert('A loja ainda não configurou o WhatsApp. Peça à administração para preencher o número em Meus produtos.');return;}window.open('https://wa.me/'+settings.whatsapp+'?text='+encodeURIComponent(orderText()),'_blank');};
+document.getElementById('payOrder').onclick=()=>{if(!cart.length){alert('Adicione produtos ao carrinho primeiro.');return;}if(!settings.paymentLink){alert('A loja ainda não configurou um link de pagamento.');return;}window.open(settings.paymentLink,'_blank');};
+renderStore();updateCount();calc();
+</script>
+</body></html>
